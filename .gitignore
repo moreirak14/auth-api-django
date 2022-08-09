@@ -127,3 +127,21 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# JetBrains IDE
+.idea/
+
+# VSCode Editor
+.vscode/
+
+# Ignore dynaconf secret files
+commons/.secret.toml
+.secret.toml
+.env
+
+# tests
+.coverage
+.pytest_cache/
+
+# Ignore dynaconf secret files
+.secrets.*
