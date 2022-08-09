@@ -23,7 +23,7 @@ lint | pre-commit: ## Run the pre-commit config
 	poetry run pre-commit run -a
 
 run-local: ## Run server locally
-	python manage.py runserver
+	python ./src/manage.py runserver
 
 report: test ## Create test report
 	pytest --cov=$(API_CONTAINER_NAME) --color=yes tests/
@@ -49,10 +49,10 @@ clean: ## Clean up
 	rm -rf *__pycache__
 
 makemigration-local: ## Database migration locally
-	python manage.py makemigrations
+	python ./src/manage.py makemigrations
 
 migrate-local: ## Database migrate locally
-	python manage.py migrate
+	python ./src/manage.py migrate
 
 requirements: ## Export requirements file based on poetry packages
 	poetry export -f requirements.txt --output requirements.txt --without-hashes
