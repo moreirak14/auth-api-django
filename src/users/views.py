@@ -1,4 +1,4 @@
-from rest_framework import status
+from rest_framework import permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -17,3 +17,13 @@ class RegisterView(APIView):
         user = UserSerializer(user)
 
         return Response(data=user.data, status=status.HTTP_201_CREATED)
+
+
+class RetrieveUserView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        user = UserSerializer(user)
+
+        return Response(data=user.data, status=status.HTTP_200_OK)
