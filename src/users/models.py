@@ -7,13 +7,12 @@ from django.db import models
 
 
 class UserAccountManager(BaseUserManager):
-
     def create_user(self, first_name, last_name, email, password=None):
         """
         Creates and saves a User with the given first_name, last_name, email and password.
         """
         if not email:
-            raise ValueError('Users must have an email address')
+            raise ValueError("Users must have an email address")
 
         email = self.normalize_email(email=email)
         email = email.lower()
@@ -32,7 +31,9 @@ class UserAccountManager(BaseUserManager):
         """
         Creates and saves a superuser with the given first_name, last_name, email and password.
         """
-        user = self.create_user(first_name=first_name, last_name=last_name, email=email, password=password)
+        user = self.create_user(
+            first_name=first_name, last_name=last_name, email=email, password=password
+        )
         user.is_staff = True
         user.is_superuser = True
         user.save(using=self._db)

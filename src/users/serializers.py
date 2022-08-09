@@ -19,7 +19,9 @@ class CreateUserSerializer(serializers.ModelSerializer):
             validate_password(password=password, user=user)
         except ValidationError as error:
             serializers_errors = serializers.as_serializer_error(error)
-            raise ValidationError({"password": serializers_errors["non_field_errors"]}) from error
+            raise ValidationError(
+                {"password": serializers_errors["non_field_errors"]}
+            ) from error
 
     def create(self, validated_data):
         return User.objects.create_user(**validated_data)
