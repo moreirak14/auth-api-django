@@ -1,4 +1,5 @@
 from pathlib import Path
+
 from dynaconf import Dynaconf
 
 PATH_ROOT = Path(__file__).parent
