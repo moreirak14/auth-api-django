@@ -8,6 +8,7 @@ authors = ["moreirak14 <kaiquemoreiracloud@gmail.com>"]
 python = "^3.10"
 dynaconf = "^3.1.9"
 Django = "^4.1"
+djangorestframework = "^3.13.1"
 
 [tool.poetry.dev-dependencies]
 black = "^22.6.0"
