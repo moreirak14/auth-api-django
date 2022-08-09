@@ -20,3 +20,12 @@ pytest-cov = "^3.0.0"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.flake8]
+max-line-length = 100
+
+[tool.pytest.ini_options]
+addopts = "--tb=short"
+testpaths = [
+    "tests",
+]
